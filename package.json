@@ -1,0 +1,24 @@
+{
+  "name": "friend-finder",
+  "version": "1.0.0",
+  "description": "app that finds your friends",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awb305/friendFinder.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4"
+  },
+  "author": "Andrew Bass",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/awb305/friendFinder/issues"
+  },
+  "homepage": "https://github.com/awb305/friendFinder#readme"
+}
