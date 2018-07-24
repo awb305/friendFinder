@@ -7,6 +7,9 @@ var path = require("path");
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 8080;
+
+app.use(express.static(__dirname + '/public'));
+
 // Sets up the Express app to handle data parsing
 app.use(
   bodyParser.urlencoded({
@@ -16,16 +19,15 @@ app.use(
 app.use(bodyParser.json());
 
 
+
+
 // =============================================================================
 //Program here
 
-require(path.join(__dirname,"routing/apiRoutes.js"), function(req, res){
-
-    console.log("path found");
-
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 
-})
 
 
 
