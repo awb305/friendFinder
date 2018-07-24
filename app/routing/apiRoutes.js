@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // ===============================================================================
 // LOAD DATA
 // We are linking our routes to a series of "data" sources.
@@ -59,3 +60,14 @@ module.exports = function(app) {
   });
 };
 
+=======
+app.get("api/friends", function(req, res){
+    return res.json(friends);
+});
+
+app.post("api/firends", function(req, res){
+
+/* handel incoming survey results & compatibility logic */
+
+})
+>>>>>>> 8d13165b7b58924c2af26feb6fa21b22c2097c9f
