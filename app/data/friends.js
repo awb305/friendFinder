@@ -2,9 +2,16 @@ let friends = [
   {
     name: "Ahmed",
     photo:
-      "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-    scores: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]
+      "https://cps-static.rovicorp.com/2/Open/Getty_Images_406/Person/101126/_2by3/_derived_jpg_q90_500x500_m0/477544043.jpg?partner=allrovi.com",
+    scores: [5,5,5,5,5,5,5,5,5,5]
+  },
+  {
+    name: "bob",
+    photo:
+      "https://cps-static.rovicorp.com/2/Open/Getty_Images_406/Person/101126/_2by3/_derived_jpg_q90_500x500_m0/477544043.jpg?partner=allrovi.com",
+    scores: [1,1,1,1,1,1,1,1,1,1]
   }
+
 ];
 
 module.exports = friends;

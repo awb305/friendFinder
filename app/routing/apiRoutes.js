@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // ===============================================================================
 // LOAD DATA
 // We are linking our routes to a series of "data" sources.
@@ -37,15 +36,58 @@ module.exports = function(app) {
     // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body-parser middleware
-    if (tableData.length < 5) {
-      tableData.push(req.body);
-      res.json(true);
+    console.log(req.body);
+
+    let input = req.body; 
+    let inputScores = input.scores;
+
+    let diffArray = [];
+
+
+
+   for(let i = 0; i<friends.length; i++){
+
+      let compare = friends[i].scores;
+
+      console.log("compare", compare);
+      console.log("inputScores", inputScores);
+
+      let totalDiff = 0;
+      
+      for(let j = 0; j< inputScores.length; j++){
+        totalDiff += Math.abs(inputScores[j] - compare[j]);
+      }
+      
+      diffArray.push(totalDiff);
     }
-    else {
-      waitListData.push(req.body);
-      res.json(false);
+
+    let min = 500; 
+    let match = 500;
+
+    console.log("diff array", diffArray);
+
+    for(let i = 0; i < diffArray.length; i++){
+     if(diffArray[i] < match){
+       match = diffArray[i];
+       min = i;
+
+     }
     }
+
+
+
+    console.log("match", min);
+   
+    console.log("matching friend", friends[min]);
+    
+    friends.push(input);
+
+    console.log(friends);
+    res.json(friends[min]);
+
   });
+
+
 
   // ---------------------------------------------------------------------------
   // I added this below code so you could clear out the table while working with the functionality.
@@ -60,14 +102,3 @@ module.exports = function(app) {
   });
 };
 
-=======
-app.get("api/friends", function(req, res){
-    return res.json(friends);
-});
-
-app.post("api/firends", function(req, res){
-
-/* handel incoming survey results & compatibility logic */
-
-})
->>>>>>> 8d13165b7b58924c2af26feb6fa21b22c2097c9f

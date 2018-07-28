@@ -10,37 +10,75 @@
     <!-- Put your stylesheet here! -->
     <!-- Put your CSS reset here! -->
     <link rel="stylesheet" href="style.css">
-    
+    <script src="https://code.jquery.com/jquery.js"></script>
+
 
     <title>Survey</title>
 </head>
 
 
 <style>
-    h6 {
+    *{
+        margin: .5rem;
+    }
+
+
+    h6, h3 {
         width: 100%;
+        margin: .5rem;
+    }
+
+    .btn-primary {
+        width: 100%
+    }
+    #matchPicture{
+        height: 10rem;
+        width: 10rem;
+    }
+    #name, #photo {
+        width:60%;
     }
 </style>
 
 <body>
+    <!-- Button trigger modal -->
+    
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">You matched with:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h1 id="matchName"></h1>
+                    <img id="matchPicture" src="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
-            <h1>Survey Questinos</h1>
+            <h1>Survey Questions</h1>
         </div>
+        <hr>
         <div class="row">
             <h3>About you</h3>
-
+            <h6>Name</h6>
+            <input class="form-control form-control-lg" type="text" id="name" placeholder="Han Solo">
+            <h6>Link to photo URL</h6>
+            <input class="form-control form-control-lg" type="text" id="photo" placeholder="silly picture url">
         </div>
-
-
-
-
-
-
-
-
+        <hr>
         <div class="row question-1">
-            <h3>Qusetion 1</h3>
+            <h3>Question 1</h3>
             <h6>Do you think peanut butter is awesome?</h6>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-1" data-toggle="dropdown" aria-haspopup="true"
@@ -48,16 +86,16 @@
                     Dropdown button
                 </button>
                 <div class="dropdown-menu" id="dropdown-menu-1" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">1 "Strongly Disagree"</a>
-                    <a class="dropdown-item" href="#">2</a>
-                    <a class="dropdown-item" href="#">3</a>
-                    <a class="dropdown-item" href="#">4</a>
-                    <a class="dropdown-item" href="#">5 "Strongly Agree"</a>
+                    <a class="dropdown-item" >1 "Strongly Disagree"</a>
+                    <a class="dropdown-item" >2</a>
+                    <a class="dropdown-item" >3</a>
+                    <a class="dropdown-item" >4</a>
+                    <a class="dropdown-item" >5 "Strongly Agree"</a>
                 </div>
             </div>
         </div>
         <div class="row question-2">
-            <h3>Qusetion 2</h3>
+            <h3>Question 2</h3>
             <h6>Do you think Jelly is awesome?</h6>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-2" data-toggle="dropdown" aria-haspopup="true"
@@ -65,16 +103,16 @@
                     Dropdown button
                 </button>
                 <div class="dropdown-menu" id="dropdown-menu-2" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">1 "Strongly Disagree"</a>
-                    <a class="dropdown-item" href="#">2</a>
-                    <a class="dropdown-item" href="#">3</a>
-                    <a class="dropdown-item" href="#">4</a>
-                    <a class="dropdown-item" href="#">5 "Strongly Agree"</a>
+                    <a class="dropdown-item" >1 "Strongly Disagree"</a>
+                    <a class="dropdown-item" >2</a>
+                    <a class="dropdown-item" >3</a>
+                    <a class="dropdown-item" >4</a>
+                    <a class="dropdown-item" >5 "Strongly Agree"</a>
                 </div>
             </div>
         </div>
         <div class="row question-3">
-            <h3>Qusetion 3</h3>
+            <h3>Question 3</h3>
             <h6>Do you think ppjs are awesome? </h6>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-3" data-toggle="dropdown" aria-haspopup="true"
@@ -82,16 +120,16 @@
                     Dropdown button
                 </button>
                 <div class="dropdown-menu" id="dropdown-menu-3" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">1 "Strongly Disagree"</a>
-                    <a class="dropdown-item" href="#">2</a>
-                    <a class="dropdown-item" href="#">3</a>
-                    <a class="dropdown-item" href="#">4</a>
-                    <a class="dropdown-item" href="#">5 "Strongly Agree"</a>
+                    <a class="dropdown-item" >1 "Strongly Disagree"</a>
+                    <a class="dropdown-item" >2</a>
+                    <a class="dropdown-item" >3</a>
+                    <a class="dropdown-item" >4</a>
+                    <a class="dropdown-item" >5 "Strongly Agree"</a>
                 </div>
             </div>
         </div>
         <div class="row question-4">
-            <h3>Qusetion 4</h3>
+            <h3>Question 4</h3>
             <h6>Do you agree with president Trump's policies?</h6>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-4" data-toggle="dropdown" aria-haspopup="true"
@@ -99,16 +137,16 @@
                     Dropdown button
                 </button>
                 <div class="dropdown-menu" id="dropdown-menu-4" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">1 "Strongly Disagree"</a>
-                    <a class="dropdown-item" href="#">2</a>
-                    <a class="dropdown-item" href="#">3</a>
-                    <a class="dropdown-item" href="#">4</a>
-                    <a class="dropdown-item" href="#">5 "Strongly Agree"</a>
+                    <a class="dropdown-item" >1 "Strongly Disagree"</a>
+                    <a class="dropdown-item" >2</a>
+                    <a class="dropdown-item" >3</a>
+                    <a class="dropdown-item" >4</a>
+                    <a class="dropdown-item" >5 "Strongly Agree"</a>
                 </div>
             </div>
         </div>
         <div class="row question-5">
-            <h3>Qusetion 5</h3>
+            <h3>Question 5</h3>
             <h6>Do you agree with Obama's policies?</h6>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-5" data-toggle="dropdown" aria-haspopup="true"
@@ -116,11 +154,11 @@
                     Dropdown button
                 </button>
                 <div class="dropdown-menu" id="dropdown-menu-5" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">1 "Strongly Disagree"</a>
-                    <a class="dropdown-item" href="#">2</a>
-                    <a class="dropdown-item" href="#">3</a>
-                    <a class="dropdown-item" href="#">4</a>
-                    <a class="dropdown-item" href="#">5 "Strongly Agree"</a>
+                    <a class="dropdown-item" >1 "Strongly Disagree"</a>
+                    <a class="dropdown-item" >2</a>
+                    <a class="dropdown-item" >3</a>
+                    <a class="dropdown-item" >4</a>
+                    <a class="dropdown-item" >5 "Strongly Agree"</a>
                 </div>
             </div>
         </div>
@@ -133,16 +171,16 @@
                     Dropdown button
                 </button>
                 <div class="dropdown-menu" id="dropdown-menu-6" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">1 "Strongly Disagree"</a>
-                    <a class="dropdown-item" href="#">2</a>
-                    <a class="dropdown-item" href="#">3</a>
-                    <a class="dropdown-item" href="#">4</a>
-                    <a class="dropdown-item" href="#">5 "Strongly Agree"</a>
+                    <a class="dropdown-item" >1 "Strongly Disagree"</a>
+                    <a class="dropdown-item" >2</a>
+                    <a class="dropdown-item" >3</a>
+                    <a class="dropdown-item" >4</a>
+                    <a class="dropdown-item" >5 "Strongly Agree"</a>
                 </div>
             </div>
         </div>
         <div class="row question-7">
-            <h3>Qusetion 7</h3>
+            <h3>Question 7</h3>
             <h6>Do you agree with Lebron James's decision to leave Cleveland?</h6>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-7" data-toggle="dropdown" aria-haspopup="true"
@@ -150,16 +188,16 @@
                     Dropdown button
                 </button>
                 <div class="dropdown-menu" id="dropdown-menu-7" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">1 "Strongly Disagree"</a>
-                    <a class="dropdown-item" href="#">2</a>
-                    <a class="dropdown-item" href="#">3</a>
-                    <a class="dropdown-item" href="#">4</a>
-                    <a class="dropdown-item" href="#">5 "Strongly Agree"</a>
+                    <a class="dropdown-item" >1 "Strongly Disagree"</a>
+                    <a class="dropdown-item" >2</a>
+                    <a class="dropdown-item" >3</a>
+                    <a class="dropdown-item" >4</a>
+                    <a class="dropdown-item" >5 "Strongly Agree"</a>
                 </div>
             </div>
         </div>
-        <div class="row question-1">
-            <h3>Qusetion 8</h3>
+        <div class="row question-8">
+            <h3>Question 8</h3>
             <h6>Do you agree that Kevin Durant is a cupcake?</h6>
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-8" data-toggle="dropdown" aria-haspopup="true"
@@ -167,12 +205,53 @@
                     Dropdown button
                 </button>
                 <div class="dropdown-menu" id="dropdown-menu-8" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">1 "Strongly Disagree"</a>
-                    <a class="dropdown-item" href="#">2</a>
-                    <a class="dropdown-item" href="#">3</a>
-                    <a class="dropdown-item" href="#">4</a>
-                    <a class="dropdown-item" href="#">5 "Strongly Agree"</a>
+                    <a class="dropdown-item" >1 "Strongly Disagree"</a>
+                    <a class="dropdown-item" >2</a>
+                    <a class="dropdown-item" >3</a>
+                    <a class="dropdown-item" >4</a>
+                    <a class="dropdown-item" >5 "Strongly Agree"</a>
                 </div>
+            </div>
+        </div>
+        <div class="row question-9">
+            <h3>Question 9</h3>
+            <h6>Do you think Tim Tebow was a good quaterback?</h6>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-9" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Dropdown button
+                </button>
+                <div class="dropdown-menu" id="dropdown-menu-9" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" >1 "Strongly Disagree"</a>
+                    <a class="dropdown-item" >2</a>
+                    <a class="dropdown-item" >3</a>
+                    <a class="dropdown-item" >4</a>
+                    <a class="dropdown-item" >5 "Strongly Agree"</a>
+                </div>
+            </div>
+        </div>
+        <div class="row question-10">
+            <h3>Question 10</h3>
+            <h6>Do you think sweets are better than salty snacks?</h6>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-10" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Dropdown button
+                </button>
+                <div class="dropdown-menu" id="dropdown-menu-10" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" >1 "Strongly Disagree"</a>
+                    <a class="dropdown-item" >2</a>
+                    <a class="dropdown-item" >3</a>
+                    <a class="dropdown-item" >4</a>
+                    <a class="dropdown-item" >5 "Strongly Agree"</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+
+
+                <button class="btn btn-primary" id="submit" data-toggle="modal" data-target="#exampleModalCenter">Submit</button>
             </div>
         </div>
     </div>
@@ -188,8 +267,7 @@
 
 
 <!-- Put your javascript files here  -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
@@ -238,6 +316,44 @@
         $("#dropdownMenuButton-8").text($(this).text());
         $("#dropdownMenuButton-8").val($(this).text());
 
+    });
+    $("#dropdown-menu-9 a").click(function () {
+        $("#dropdownMenuButton-9").text($(this).text());
+        $("#dropdownMenuButton-9").val($(this).text());
+
+    });
+    $("#dropdown-menu-10 a").click(function () {
+        $("#dropdownMenuButton-10").text($(this).text());
+        $("#dropdownMenuButton-10").val($(this).text());
+
+    });
+</script>
+<script>
+    $("#submit").on("click", function (event) {
+        event.preventDefault();
+        let scores = [];
+        for (let i = 1; i <= 10; i++) {
+            let score = $("#dropdownMenuButton-" + i).val().charAt(0);
+            scores.push(score);
+        };
+        console.log(scores);
+
+
+        var newFriend = {
+            name: $("#name").val().trim(),
+            photo: $("#photo").val().trim(),
+            scores: scores
+
+        };
+        console.log(newFriend);
+
+
+        $.post("/api/friends", newFriend)
+            .then(function (data) {
+                console.log("matching friend", data);
+                $("#matchName").text(data.name);
+                $("#matchPicture").attr("src", data.photo);
+            });
     });
 </script>
 

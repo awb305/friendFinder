@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // ===============================================================================
 // DEPENDENCIES
 // We need to include the path package to get the correct file path for our html
@@ -20,7 +19,8 @@ module.exports = function(app) {
   });
 
   app.get("/survey", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/survey.html"));
+    console.log('get called');
+    res.sendFile("../public/survey.html");
   });
 
   // If no matching route is found default to home
@@ -28,12 +28,3 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 };
-=======
-app.get("/survey", function(req,res){
-    res.sendfile(path.join(__dirname,"survey.html"));
-});
-
-app.get("/", function(req, res){
-    res.sendfile(path.join(__dirname, "survey.html"));
-});
->>>>>>> 8d13165b7b58924c2af26feb6fa21b22c2097c9f
